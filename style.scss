@@ -1,0 +1,91 @@
+// #charts.trade-currency {
+//   .chart {
+//     height: 400px;
+//   }
+// }
+
+// Chart blurbs
+.text-content > ul {
+  display: none;
+}
+.chart-blurb {
+  padding: 1em 1em 1.5em 1em;
+  font-size: .9em;
+}
+
+
+$red: hsl(10, 90%, 45%);
+
+.highcharts-negative {
+  // fill: $red;
+  stroke: $red;
+}
+
+.highcharts-area {
+  fill-opacity: 0.5 !important;
+}
+
+.chart {
+  width: 33%;
+  float: left;
+  padding-bottom: 2em;
+  .chart-target {
+    height: 260px;
+  }
+  
+  
+  @media (max-width: 750px) {
+    width: 50%;
+  }
+  
+  
+  @media (max-width: 600px) {
+    width: 100%;
+    float: none;
+  }
+}
+
+  @media (max-width: 750px) {
+    .chart {
+      width: 48%;
+    }
+  }
+  
+  
+  @media (max-width: 600px) {
+    .chart {
+      width: 100%;
+      float: none;
+    }
+
+  }
+$series-colors: (
+  '0'  : hsl(10, 90%, 45%), // Check why first chart in Currencies section is wrong color
+	'1'  : hsl(10, 90%, 45%),
+	'2'  : hsl(196, 92%, 31%),
+	'3'  : hsl(27, 90%, 53%),
+	'4'  : hsl(174, 60%, 50%),
+	'5'  : hsl(251, 15%, 50%),
+	'6'  : hsl(8, 90%, 60%),
+	'7'  : hsl(0, 0%, 30%),
+	'8'  : hsl(10, 80%, 45%),
+	'9'  : hsl(196, 92%, 31%),
+	'10' : hsl(27, 83%, 53%),
+	'11' : hsl(174, 50%, 50%),
+	'12' : hsl(251, 15%, 50%)
+);
+
+@each $index, $color in $series-colors {
+  #chart-#{$index} .highcharts-color-0 {
+      stroke: #{$color} !important;
+      fill: #{$color} !important;
+  }
+}
+
+
+@each $index, $color in $series-colors {
+  #chart-#{$index} .highcharts-color-0 {
+      stroke: #069 !important;
+      fill: #069 !important;
+  }
+}
